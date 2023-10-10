@@ -5,9 +5,11 @@ import DemoImage from '../../Assets/DemoImage.jpg'
 import { useDispatch } from 'react-redux'
 import { useNavigate} from 'react-router-dom'
 import { removeItem, clearCart } from '../../Store/cartSlice'
-// import CloseIcon from '@mui/icons-material/Close';
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import {loadStripe} from '@stripe/stripe-js';
+
+
 
 
 const HeaderBox = styled(Box)`
@@ -222,7 +224,34 @@ const CartItemList = ({ items, dummy, }) => {
       }) 
   }
 
-  const handleClick = () => {
+  const handleClick = async() => {
+
+    const stripe = await loadStripe("pk_test_51Ng4lGSEiwEcRwM85xDktfbuAOEdaHmYCBySDk8pCuZkvA2lo9yiekBc7AWluNes56X5qaRsqWLuPeWlP1Iq0Map00u0asdMkJ");
+    
+        const body = {
+            products:carts
+        }
+
+        const headers = {
+            "Content-Type":"application/json"
+        }
+        
+        const response = await fetch("http://localhost:2978/api/create-checkout-session",{
+            method:"POST",
+            headers:headers,
+            body:JSON.stringify(body)
+        });
+
+        const session = await response.json();
+
+        const result = stripe.redirectToCheckout({
+            sessionId:session.id
+        });
+        
+        if(result.error){
+            console.log(result.error);
+        }
+
     toast.success("Order Placed Successfully", {
         position: "top-center",
         newestOnTop: true,

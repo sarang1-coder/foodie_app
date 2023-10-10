@@ -5,6 +5,7 @@ import { SWIGGY_API_URL } from '../../utils/Constants';
 import Shimmer from '../Components/Shimmer/Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../../utils/useOnlineStatus';
+import Filter from './RestaurantMenu/Filter';
 
 const MainBox = styled(Box)`
 // background-image: linear-gradient(to bottom, rgba(238, 194, 174, 0) 0%, rgba(230, 99, 103, 0.1) 100%);
@@ -157,6 +158,9 @@ const Restaurants = () => {
                Search
             </ButtonContainer>
           </Box>
+
+          <Filter sx={{width:'10vw'}}/>
+
 
           <ButtonBox
             variant='outlined'

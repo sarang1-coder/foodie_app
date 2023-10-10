@@ -16,6 +16,8 @@ import UserContext from '../utils/userContext'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import appStore from './Store/appStore'
+import Success from './Pages/Redirect/Success'
+import Cancel from './Pages/Redirect/Cancel'
 
 
 
@@ -100,8 +102,15 @@ const appRouter = createBrowserRouter([
         path: '/error',
         element : <Error/>,
       },
+      {
+        path:'/success',
+        element:<Success/>
+      },
+      {
+        path:'/cancel',
+        element:<Cancel/>
+      }
     ],
-   
   },
 ])
 
