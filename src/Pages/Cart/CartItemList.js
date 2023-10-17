@@ -226,10 +226,10 @@ const CartItemList = ({ items, dummy, }) => {
 
   const handleClick = async() => {
 
-    const stripe = await loadStripe("pk_test_51Ng4lGSEiwEcRwM85xDktfbuAOEdaHmYCBySDk8pCuZkvA2lo9yiekBc7AWluNes56X5qaRsqWLuPeWlP1Iq0Map00u0asdMkJ");
+        const stripe = await loadStripe("pk_test_51Ng4lGSEiwEcRwM85xDktfbuAOEdaHmYCBySDk8pCuZkvA2lo9yiekBc7AWluNes56X5qaRsqWLuPeWlP1Iq0Map00u0asdMkJ");
     
         const body = {
-            products:carts
+            products:items
         }
 
         const headers = {

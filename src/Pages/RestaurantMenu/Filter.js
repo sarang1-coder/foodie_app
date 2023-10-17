@@ -1,11 +1,24 @@
-import React from 'react'
+// Filter.js
 
-const Filter = () => {
+import React from 'react';
+import { Box, Checkbox, FormControlLabel } from '@mui/material';
+
+const Filter = ({ isVegetarian, handleFilterChange }) => {
   return (
-    <div>
-        <h1>Filter</h1>
-    </div>
-  )
-}
+    <Box>
+      <FormControlLabel
+        control={
+          <Checkbox
+            checked={isVegetarian}
+            onChange={handleFilterChange}
+            name="isVegetarian"
+            color="primary"
+          />
+        }
+        label="Vegetarian Only"
+      />
+    </Box>
+  );
+};
 
-export default Filter
+export default Filter;

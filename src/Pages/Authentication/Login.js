@@ -7,7 +7,7 @@ import { firebaseAuth, provider } from '../../../utils/Firebase/FirebaseConfig'
 import { signInWithPopup, onAuthStateChanged, signInWithRedirect } from 'firebase/auth'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth'
 import {ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+// import 'react-toastify/dist/ReaimpopctToastify.css';
 import { useNavigate } from 'react-router-dom'
 import FoodImage from '../../Assets/FoodImage2.png'
 import Google from '../../Assets/google.png'
@@ -372,6 +372,7 @@ const Login = () => {
     setIsSignIn(!isSignIn)
   } 
 
+  
   return (
     <>
       <AppBar sx={{boxShadow : 'none'}}>
@@ -412,7 +413,7 @@ const Login = () => {
                   <LocalMallOutlinedIcon/>
                 </CartBox>
               </li>
-              
+
             </ul>
           </NavItems>
         </HeaderBox>

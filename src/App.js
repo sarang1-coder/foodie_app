@@ -11,13 +11,13 @@ import Login from './Pages/Authentication/Login'
 import Cart from './Pages/Cart/Cart'
 import { Box } from '@mui/material'
 import RestaurantMenu from './Pages/RestaurantMenu/RestaurantMenu'
-// import Grocery from './Components/Grocery/Grocery'
 import UserContext from '../utils/userContext'
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import appStore from './Store/appStore'
 import Success from './Pages/Redirect/Success'
 import Cancel from './Pages/Redirect/Cancel'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -54,9 +54,10 @@ const MainComponent = () => {
               {/* Outlet is like a tunnel so all the children according to the routes go inside and come over here in place of this Outlet. */}
               <Outlet/>  
             </Box>
+
+
           </UserContext.Provider>
         </Provider>
-        
     </>
   )
 }

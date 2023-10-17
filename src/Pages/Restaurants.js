@@ -80,7 +80,7 @@ const Restaurants = () => {
     getRestaurants();
   }, []);
 
-  console.log(listOfRestaurants)
+  console.log("listOfRestaurants"+listOfRestaurants)
 
   const getRestaurants = async () => {
     try {
@@ -92,6 +92,7 @@ const Restaurants = () => {
       
       setListOfRestaurants(restaurants);
       setFilteredRestaurants(restaurants);
+
     } catch (error) {
       console.log(error, "error while getting the restaurants");
     }
@@ -128,7 +129,12 @@ const Restaurants = () => {
   
 
   // NOT render component (Early return)
-  if (!listOfRestaurants) return <h1 style={{marginTop:'8rem', textAlign:'center', color:'red'}}>SORRY, RESTAURANTS  NOT AVAILABLE AT THE MOMENT, <br/> PLZ TRY AGAIN LATER</h1>
+  if (!listOfRestaurants) 
+    return 
+    <h1 style={{marginTop:'8rem', textAlign:'center', color:'red'}}>
+      SORRY, RESTAURANTS  NOT AVAILABLE AT THE MOMENT, <br/> 
+      PLZ TRY AGAIN LATER
+    </h1>
 
 
   // Conditional Rendering
@@ -152,14 +158,15 @@ const Restaurants = () => {
                 onChange={handleSearchInputChange}
               />
             </SearchContainer>
-        
+           
             <ButtonContainer
               variant='contained'>
                Search
             </ButtonContainer>
+            
           </Box>
 
-          <Filter sx={{width:'10vw'}}/>
+        
 
 
           <ButtonBox
@@ -171,6 +178,7 @@ const Restaurants = () => {
           </ButtonBox>
         </Box>
 
+  
         {
           listOfRestaurants.length === 0 ? (
            <Shimmer />

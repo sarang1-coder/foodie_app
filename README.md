@@ -4,7 +4,7 @@
 
 For an optimal experience, please access the website in desktop view, as it is currently not responsive. 👀
 
-Live Project : https://food-ordering-app-gilt.vercel.app/
+Live Project : https://foodieapp-7786b.web.app/
 
 ## Technologies Used :
 

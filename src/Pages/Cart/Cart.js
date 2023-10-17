@@ -86,7 +86,6 @@ const Cart = () => {
             )
           }
         </MainCartBox>
-         
       </MainContainer>
       <Footer/>
   </>
